@@ -35,6 +35,9 @@ img.albumCover {
 .unfavorite {
     color: gray;
 }
+.favorite {
+    color: red;
+}
 .container {
     padding: 2px 16px;
 }
