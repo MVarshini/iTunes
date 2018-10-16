@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input { width: 100%; display: block; padding: 1em; }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 15%;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.result {
+    text-align: center;
+}
+
+img.albumCover {
+    border-radius: 5px 5px 0 0;
+    width: 90%;
+    text-align: center;
+    max-width: 300px;
+    max-height: 300px;
+    display: inline-block;
+    padding: 35px 10px 10px;
+    height: 200px;
+}
+
+.unfavorite {
+    color: gray;
+}
+.container {
+    padding: 2px 16px;
+}
+
+.imgWrapper {
+    position: relative;
+}
+
+.favouriteIcon {
+    padding: 10px;
+    float: left;
+    display: inline-block;
+    position: absolute;
+    right: 0%;
+}
+
+.artistName {
+    display: -webkit-box;
+    max-width: 400px;
+    height: 40px;
+    margin: 0 auto;
+    line-height: 1.4;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
