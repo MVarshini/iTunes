@@ -3,22 +3,32 @@ body {
     padding: 0;
 }
 
-input { width: 100%; display: block; padding: 1em; }
+input {
+    width: 100%;
+    display: block;
+    padding: 1em;
+}
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    width: 15%;
     border-radius: 5px;
     display: inline-block;
+    margin: 10px;
+    width: 250px;
+    cursor: pointer;
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.result {
+#result {
     text-align: center;
+}
+
+label[for="modalDiv"] {
+    cursor: pointer;
 }
 
 img.albumCover {
@@ -32,12 +42,10 @@ img.albumCover {
     height: 200px;
 }
 
-.unfavorite {
-    color: gray;
-}
 .favorite {
-    color: red;
+    color: red !important;
 }
+
 .container {
     padding: 2px 16px;
 }
@@ -49,9 +57,9 @@ img.albumCover {
 .favouriteIcon {
     padding: 10px;
     float: left;
-    display: inline-block;
     position: absolute;
     right: 0%;
+    color: gray;
 }
 
 .artistName {
@@ -65,3 +73,118 @@ img.albumCover {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.songDetail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+}
+
+.leftCcolumn {
+    width: 35%;
+    position: relative;
+}
+
+.rightColumn {
+    width: 65%;
+    margin-top: 25px;
+}
+
+
+/*  Modal
+ * =============================== */
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    background: rgba(0, 0, 0, .9);
+    transition: opacity .25s ease;
+}
+
+.modal__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.modal-state {
+    display: none;
+}
+
+.modal-state:checked+.modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-state:checked+.modal .modal__inner {
+    top: 0;
+}
+
+.modal__inner {
+    transition: top .25s ease;
+    position: absolute;
+    top: -20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    margin: auto;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    padding: 1em 2em;
+    height: 40%;
+}
+
+.modal__close {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1.1em;
+    height: 1.1em;
+    cursor: pointer;
+}
+
+.modal__close:after,
+.modal__close:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 1.5em;
+    background: #ccc;
+    display: block;
+    transform: rotate(45deg);
+    left: 50%;
+    margin: -3px 0 0 -1px;
+    top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+    background: #aaa;
+}
+
+.modal__close:before {
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+    .modal__inner {
+        width: 90%;
+        box-sizing: border-box;
+    }
+}
+
+
+/*  Modal
+ * =============================== */
